@@ -1,0 +1,84 @@
+header {
+  padding: 5px;
+  background: #5c5cce;
+}
+
+header h1 {
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  color: #fff;
+  margin-left: 5px;
+}
+
+header img {
+  width: 100px;
+  vertical-align: middle;
+}
+
+main #youtube-videos {
+  padding: 10px;
+  background: #e4e4e4;
+  min-height: 100vh;
+}
+
+main .video {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px 0 #bdbdbd;
+}
+
+main .video .thumb {
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 0 15px;
+}
+
+main .video .thumb img {
+  width: 100%;
+}
+
+.title {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  line-height: 22px;
+}
+
+.video-player {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.video-player .iframe {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  top: -25px;
+  color: #fff;
+  opacity: 0.7;
+  font-family: Barlow;
+  width: 35px;
+  height: 30px;
+  text-align: right;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+}
