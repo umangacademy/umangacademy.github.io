@@ -2,13 +2,7 @@ $(document).ready(function () {
   console.log("MAIN JS");
 
   let resultSize = 5;
-
-  const someRandomString = "AIzaSyBkwMFQomrqATAAqtnoUSVb7F3twgdgdWY";
-  const decrypted = CryptoJS.AES.decrypt(
-    "U2FsdGVkX1+EhVZcXdmkqsjH2P8iEQxGeVK4znC+xLX1Dcfxa4j6eAKYeFioP4UQ2SyCRVSBeVyv4eZ7SAEM6g==",
-    someRandomString
-  );
-  const randomString = decrypted.toString(CryptoJS.enc.Utf8);
+  let randomString = "";
 
   const width = $(window).width();
 
@@ -59,7 +53,25 @@ $(document).ready(function () {
     });
   };
 
-  getVideos(resultSize);
+  const someVar =
+    "$2b$10$JbvzOK2N2s7SlP6xvPfNBOTXzgL0fVzh6Knq/w9yAxY4DyqkpEP9W";
+
+  $.ajax({
+    url: "https://api.jsonbin.io/b/60044914e31fbc3bdef4c9da/2",
+    type: "GET",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader("SECRET-KEY", someVar);
+    },
+    success: function (data) {
+      const someRandomString2 = "abcd123urtrtrgRRRR7545";
+      const decrypted = CryptoJS.AES.decrypt(
+        data.randomString,
+        someRandomString2
+      );
+      randomString = decrypted.toString(CryptoJS.enc.Utf8);
+      getVideos(resultSize);
+    },
+  });
 
   $(window).scroll(function () {
     if (
